@@ -41,16 +41,16 @@
 <li><a href="#Monkey">Monkey</a> &amp; <a href="#Monkey-ScriptMS">Monkey Script(MS)</a></li>
 <li>Monkey Runner</li>
 <li>Espresso</li>
-</ol><h1 id="Monkey-amp-Monkey-Script"><a class="anchor hidden-xs" href="#Monkey-amp-Monkey-Script" title="Monkey-amp-Monkey-Script"><span class="octicon octicon-link"></span></a>Monkey &amp; Monkey Script</h1><p><img src="https://i.imgur.com/wGopN9j.png" alt="Monkey -help"><br>
+</ol><hr><h1 id="Monkey-amp-Monkey-Script"><a class="anchor hidden-xs" href="#Monkey-amp-Monkey-Script" title="Monkey-amp-Monkey-Script"><span class="octicon octicon-link"></span></a>Monkey &amp; Monkey Script</h1><p><img src="https://i.imgur.com/wGopN9j.png" alt="Monkey -help"><br>
 Monkey之所以稱為猴子是因為整個過程猶如猴子般不懂亂點，但可以制定生成規則，程式會依照規則生成之後並執行。<br>
-Monkey Script(MS)為可程式化的腳本類似按鍵精靈，呼叫規定的function而附檔名不限，在Google官方沒公布用法，但從<a href="https://android.googlesource.com/platform/development/+/master/cmds/monkey/src/com/android/commands/monkey/MonkeySourceScript.java" target="_blank">MonkeySourceScript</a>中的註解可以看出使用方法及功能。</p><h2 id="Monkey"><a class="anchor hidden-xs" href="#Monkey" title="Monkey"><span class="octicon octicon-link"></span></a>Monkey</h2><ul>
+Monkey Script(MS)為可程式化的腳本類似按鍵精靈，呼叫規定的function而附檔名不限，在Google官方沒公布用法，但從<a href="https://android.googlesource.com/platform/development/+/master/cmds/monkey/src/com/android/commands/monkey/MonkeySourceScript.java" target="_blank">MonkeySourceScript</a>中的註解可以看出使用方法及功能。</p><hr><h2 id="Monkey"><a class="anchor hidden-xs" href="#Monkey" title="Monkey"><span class="octicon octicon-link"></span></a>Monkey</h2><ul>
 <li>指定Package</li>
 <li>各事件的比例</li>
 <li>種子數</li>
 <li>間隔時間</li>
 <li>設定Log等級或是印出Log於cmd<br>
 Windows：設定好ADB環境變數，確認可以使用後即可開始下monkey指令。</li>
-</ul><hr><h3 id="基本指令"><a class="anchor hidden-xs" href="#基本指令" title="基本指令"><span class="octicon octicon-link"></span></a>基本指令</h3><pre><code>adb shell monkey -p &lt;packagename&gt; --throttle &lt;msec&gt; [-v[-v]...] &lt;count&gt; &gt; &lt;router&gt;
+</ul><h3 id="Basic-Command"><a class="anchor hidden-xs" href="#Basic-Command" title="Basic-Command"><span class="octicon octicon-link"></span></a>Basic Command</h3><pre><code>adb shell monkey -p &lt;packagename&gt; --throttle &lt;msec&gt; [-v[-v]...] &lt;count&gt; &gt; &lt;router&gt;
 </code></pre><table>
 <thead>
 <tr>
@@ -80,7 +80,7 @@ Windows：設定好ADB環境變數，確認可以使用後即可開始下monkey�
 <td style="text-align:center">Log存檔位置</td>
 </tr>
 </tbody>
-</table><hr><h3 id="指令參數"><a class="anchor hidden-xs" href="#指令參數" title="指令參數"><span class="octicon octicon-link"></span></a>指令參數</h3><table>
+</table><h3 id="Command-Parameter"><a class="anchor hidden-xs" href="#Command-Parameter" title="Command-Parameter"><span class="octicon octicon-link"></span></a>Command Parameter</h3><table>
 <thead>
 <tr>
 <th>參數</th>
@@ -125,7 +125,7 @@ Windows：設定好ADB環境變數，確認可以使用後即可開始下monkey�
 <td>測試完成後建立性能報告，通常存放於/data/misc目錄下，分析需要使用 Traceview</td>
 </tr>
 </tbody>
-</table><h3 id="隨機事件參數"><a class="anchor hidden-xs" href="#隨機事件參數" title="隨機事件參數"><span class="octicon octicon-link"></span></a>隨機事件參數</h3><table>
+</table><h3 id="Random-Command-Parameter"><a class="anchor hidden-xs" href="#Random-Command-Parameter" title="Random-Command-Parameter"><span class="octicon octicon-link"></span></a>Random Command Parameter</h3><table>
 <thead>
 <tr>
 <th style="text-align:center">參數</th>
@@ -177,19 +177,192 @@ Windows：設定好ADB環境變數，確認可以使用後即可開始下monkey�
 </tbody>
 </table><div class="alert alert-warning">
 <p>事件總和必須為100%</p>
-</div><h2 id="tip6"><a class="anchor hidden-xs" href="#" title=""><span class="octicon octicon-link"></span></a><img src="https://i.imgur.com/hjHis2q.jpg" alt="隨機事件參數結構圖"></h2><h2 id="Monkey-ScriptMS"><a class="anchor hidden-xs" href="#Monkey-ScriptMS" title="Monkey-ScriptMS"><span class="octicon octicon-link"></span></a>Monkey Script(MS)</h2><div class="resize-sensor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div>
+</div><p><img src="https://i.imgur.com/hjHis2q.jpg" alt="隨機事件參數結構圖"></p><hr><h2 id="Monkey-ScriptMS"><a class="anchor hidden-xs" href="#Monkey-ScriptMS" title="Monkey-ScriptMS"><span class="octicon octicon-link"></span></a>Monkey Script(MS)</h2><ul>
+<li>使用預先寫好的基礎腳本</li>
+<li>壓力&amp;重複測試</li>
+<li>輸出Log</li>
+</ul><h3 id="Basic-Command1"><a class="anchor hidden-xs" href="#Basic-Command1" title="Basic-Command1"><span class="octicon octicon-link"></span></a>Basic Command</h3><ol>
+<li>首先先寫好一份腳本，腳本內容包含一個Head及Body如下：</li>
+</ol><pre><code>type= raw events
+count= &lt;event count&gt;
+speed= 1.0
+start data &gt;&gt;
+        &lt;command&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">參數</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">指定測試類型通常為一連串的事件(raw events)沒有實質使用</td>
+</tr>
+<tr>
+<td style="text-align:center">count</td>
+<td style="text-align:center">事件總數沒有實質使用</td>
+</tr>
+<tr>
+<td style="text-align:center">speed</td>
+<td style="text-align:center">設定兩次事件發送的頻率</td>
+</tr>
+<tr>
+<td style="text-align:center">start data</td>
+<td style="text-align:center">開始編寫腳本的位置</td>
+</tr>
+</tbody>
+</table><ol start="2">
+<li>將寫好的檔案推至Android主機上並記得路徑</li>
+</ol><pre><code>adb push &lt;script name&gt; &lt;router&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">參數</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">script name</td>
+<td style="text-align:center">腳本名稱並包含路徑</td>
+</tr>
+<tr>
+<td style="text-align:center">router</td>
+<td style="text-align:center">Android主機上的路徑</td>
+</tr>
+</tbody>
+</table><ol start="3">
+<li>下指令執行腳本和<a href="#Monkey">Monkey</a>雷同，但這邊的count是腳本執行次數</li>
+</ol><pre><code>adb shell monkey –f &lt;router&gt; --throttle &lt;msec&gt; [-v[-v]...] &lt;count&gt; &gt; &lt;router1&gt;
+</code></pre><h3 id="Command-List"><a class="anchor hidden-xs" href="#Command-List" title="Command-List"><span class="octicon octicon-link"></span></a>Command List</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">參數</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DispatchPointer(downTime, eventTime,action, x, y, pressure, size, metaState, xPrecision,yPrecision,device, edgeFlags)</td>
+<td style="text-align:center">模擬點按事件</td>
+</tr>
+<tr>
+<td style="text-align:center">DispatchTrackball(downTime, eventTime,action, x, y, pressure, size, metaState, xPrecision,yPrecision,device, edgeFlags)</td>
+<td style="text-align:center">模擬軌跡球事件</td>
+</tr>
+<tr>
+<td style="text-align:center">DispatchKey(downTime,eventTime,action,code,repeat,metaState,<br>device,scancode)</td>
+<td style="text-align:center">模擬按鈕事件<br>參考<a href="https://developer.android.com/reference/android/view/KeyEvent.html" target="_blank">Android KeyEvent</a></td>
+</tr>
+<tr>
+<td style="text-align:center">DispatchPress(String key_name)</td>
+<td style="text-align:center">按鈕事件<br>參考<a href="https://developer.android.com/reference/android/view/KeyEvent.html" target="_blank">Android KeyEvent</a></td>
+</tr>
+<tr>
+<td style="text-align:center">DispatchFlip(boolean keyboardOpen)</td>
+<td style="text-align:center">開關軟體鍵盤</td>
+</tr>
+<tr>
+<td style="text-align:center">DispatchString(String string)</td>
+<td style="text-align:center">輸入文字<br>不支援中文</td>
+</tr>
+<tr>
+<td style="text-align:center">RunCmd(String cmd)</td>
+<td style="text-align:center">執行adb指令</td>
+</tr>
+<tr>
+<td style="text-align:center">LaunchActivity(String pkg_name, String cl_name,long alarmTime)</td>
+<td style="text-align:center">呼叫app</td>
+</tr>
+<tr>
+<td style="text-align:center">UserWait(long sleeptime)</td>
+<td style="text-align:center">Delay時間</td>
+</tr>
+<tr>
+<td style="text-align:center">Tap(x,y,duration)</td>
+<td style="text-align:center">點按事件</td>
+</tr>
+<tr>
+<td style="text-align:center">Drag(x1,y1,x2,y2,stepCount)</td>
+<td style="text-align:center">滑動事件</td>
+</tr>
+<tr>
+<td style="text-align:center">PinchZoom(xstart1,ystart1,xstart2,ystart2,xend2,yend2,xend1,yend1,step)</td>
+<td style="text-align:center">放大縮小</td>
+</tr>
+<tr>
+<td style="text-align:center">LongPress()</td>
+<td style="text-align:center">長按</td>
+</tr>
+</tbody>
+</table><table>
+<thead>
+<tr>
+<th style="text-align:center">重點參數</th>
+<th style="text-align:center">用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">action</td>
+<td style="text-align:center">ACTION_DOWN=0<br>ACTION_UP=1<br>ACTION_MULTIPLE=2</td>
+</tr>
+<tr>
+<td style="text-align:center">downTime</td>
+<td style="text-align:center">點按時間</td>
+</tr>
+<tr>
+<td style="text-align:center">eventTime</td>
+<td style="text-align:center">發生時間</td>
+</tr>
+<tr>
+<td style="text-align:center">pressure</td>
+<td style="text-align:center">壓力</td>
+</tr>
+<tr>
+<td style="text-align:center">size</td>
+<td style="text-align:center">點按像素大小</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">點按位置x軸</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:center">點按位置y軸</td>
+</tr>
+<tr>
+<td style="text-align:center">x1</td>
+<td style="text-align:center">點按x起始點</td>
+</tr>
+<tr>
+<td style="text-align:center">y1</td>
+<td style="text-align:center">點按y起始點</td>
+</tr>
+<tr>
+<td style="text-align:center">x2</td>
+<td style="text-align:center">點按x終點</td>
+</tr>
+<tr>
+<td style="text-align:center">y2</td>
+<td style="text-align:center">點按y終點</td>
+</tr>
+</tbody>
+</table><hr><div class="resize-sensor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-                <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li class=""><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li class=""><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li class=""><a href="#基本指令" title="基本指令">基本指令</a></li><li class=""><a href="#指令參數" title="指令參數">指令參數</a></li><li class=""><a href="#隨機事件參數" title="隨機事件參數">隨機事件參數</a></li></ul></li><li><a href="#tip6" title=""></a></li><li class=""><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+                <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
-        <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li class=""><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li class=""><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li class=""><a href="#基本指令" title="基本指令">基本指令</a></li><li class=""><a href="#指令參數" title="指令參數">指令參數</a></li><li class=""><a href="#隨機事件參數" title="隨機事件參數">隨機事件參數</a></li></ul></li><li><a href="#tip6" title=""></a></li><li class=""><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+        <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
