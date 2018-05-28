@@ -237,7 +237,7 @@ start data &gt;&gt;
 </table><ol start="3">
 <li>下指令執行腳本和<a href="#Monkey">Monkey</a>雷同，但這邊的count是腳本執行次數</li>
 </ol><pre><code>adb shell monkey –f &lt;router&gt; --throttle &lt;msec&gt; [-v[-v]...] &lt;count&gt; &gt; &lt;router1&gt;
-</code></pre><h3 id="Command-List"><a class="anchor hidden-xs" href="#Command-List" title="Command-List"><span class="octicon octicon-link"></span></a>Command List</h3><table>
+</code></pre><h3 id="Command-List0"><a class="anchor hidden-xs" href="#Command-List0" title="Command-List0"><span class="octicon octicon-link"></span></a>Command List</h3><table>
 <thead>
 <tr>
 <th style="text-align:center">參數</th>
@@ -391,19 +391,93 @@ device = MonkeyRunner.waitForConnection()
 for i in range(1,10):
     device.touch(1005,545,MonkeyDevice.DOWN_AND_UP)
     MonkeyRunner.sleep(0.3)
-</code></pre><div class="resize-sensor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div>
+</code></pre><h3 id="Command-List"><a class="anchor hidden-xs" href="#Command-List" title="Command-List"><span class="octicon octicon-link"></span></a>Command List</h3><ul>
+<li>基本要素:</li>
+</ul><table>
+<thead>
+<tr>
+<th style="text-align:center">參數</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">導入模組</td>
+<td style="text-align:center">from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice, MonkeyImage</td>
+</tr>
+<tr>
+<td style="text-align:center">設定MonkeyDevice等待連接對象</td>
+<td style="text-align:center">device = MonkeyRunner.waitForConnection()</td>
+</tr>
+</tbody>
+</table><ul>
+<li>常用指令</li>
+</ul><table>
+<thead>
+<tr>
+<th style="text-align:center">參數</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">device.installPackage(‘myproject/bin/MyApplication.apk’)</td>
+<td style="text-align:center">安裝APK</td>
+</tr>
+<tr>
+<td style="text-align:center">device.removePackage (‘com.example.android.notepad’)</td>
+<td style="text-align:center">移除APK</td>
+</tr>
+<tr>
+<td style="text-align:center">device.startActivity (component=‘com.android.OOO/com.android.OOO.MainActivity’)</td>
+<td style="text-align:center">啟動Activity</td>
+</tr>
+<tr>
+<td style="text-align:center">result = device.takeSnapshot()</td>
+<td style="text-align:center">截圖</td>
+</tr>
+<tr>
+<td style="text-align:center">result.writeToFile(‘C:\Users\Martin\Desktop\test.png’,‘png’)</td>
+<td style="text-align:center">儲存截圖</td>
+</tr>
+<tr>
+<td style="text-align:center">result.sameAs(MonkyeyImage other,float percent)</td>
+<td style="text-align:center">比對截圖內容(影像名稱,相似度)</td>
+</tr>
+<tr>
+<td style="text-align:center">MonkeyRunner.sleep(3)</td>
+<td style="text-align:center">延遲時間(ms)</td>
+</tr>
+<tr>
+<td style="text-align:center">device.drag((x1,x2),(y1,y2),time,step)</td>
+<td style="text-align:center">滑動事件(開始,結束,持續時間,步驟)</td>
+</tr>
+<tr>
+<td style="text-align:center">device.touch(408,66,“DOWN_AND_UP”)</td>
+<td style="text-align:center">觸控事件</td>
+</tr>
+<tr>
+<td style="text-align:center">device.shell(shell script)</td>
+<td style="text-align:center">執行shell</td>
+</tr>
+<tr>
+<td style="text-align:center">device.press(KEYCODE,‘DOWN_AND_UP’)</td>
+<td style="text-align:center">系統按鍵指令</td>
+</tr>
+</tbody>
+</table><div class="resize-sensor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-                <div class="toc"><ul class="nav"><li><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command0" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li class=""><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li><a href="#Basic-Script" title="Basic Script">Basic Script</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+                <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command0" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List0" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li class=""><a href="#Basic-Script" title="Basic Script">Basic Script</a></li><li class=""><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
-        <div class="toc"><ul class="nav"><li><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command0" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li class=""><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li><a href="#Basic-Script" title="Basic Script">Basic Script</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+        <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command0" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List0" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li class=""><a href="#Basic-Script" title="Basic Script">Basic Script</a></li><li class=""><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
