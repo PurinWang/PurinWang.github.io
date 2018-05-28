@@ -51,7 +51,7 @@ Monkey Script(MS)為可程式化的腳本類似按鍵精靈，呼叫規定的fun
 <li>間隔時間</li>
 <li>設定Log等級或是印出Log於cmd<br>
 Windows：設定好ADB環境變數，確認可以使用後即可開始下monkey指令。</li>
-</ul><h3 id="Basic-Command0"><a class="anchor hidden-xs" href="#Basic-Command0" title="Basic-Command0"><span class="octicon octicon-link"></span></a>Basic Command</h3><pre><code>adb shell monkey -p &lt;packagename&gt; --throttle &lt;msec&gt; [-v[-v]...] &lt;count&gt; &gt; &lt;router&gt;
+</ul><h3 id="Basic-Command"><a class="anchor hidden-xs" href="#Basic-Command" title="Basic-Command"><span class="octicon octicon-link"></span></a>Basic Command</h3><pre><code>adb shell monkey -p &lt;packagename&gt; --throttle &lt;msec&gt; [-v[-v]...] &lt;count&gt; &gt; &lt;router&gt;
 </code></pre><table>
 <thead>
 <tr>
@@ -376,7 +376,29 @@ start data &gt;&gt;
 到Android Developer官網<a href="https://developer.android.com/studio/" target="_blank">下載</a>Android Studio並安裝，進入後下載Tools SDK，再進入系統設置環境變數，而Monkey Runner就在Tools bin裡面<br>
 <img src="https://i.imgur.com/9ND9DaY.png" alt="ADT環境變數"><br>
 最後再terminal或Cmd內下指令，順利的話可進入編譯器</p><pre><code>monkeyrunner
-</code></pre><hr><h3 id="Basic-Script"><a class="anchor hidden-xs" href="#Basic-Script" title="Basic-Script"><span class="octicon octicon-link"></span></a>Basic Script</h3><p>下monkeyrunner進入編譯器後，根據<a href="https://developer.android.com/studio/test/monkeyrunner/" target="_blank">Android官方說明</a>以下為範例程式碼，主要功能為等待裝置連接後安裝APP，跑指定的Activity並點按指定按鍵最後儲存截圖。</p><pre><code>from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
+</code></pre><hr><h3 id="Basic-Script"><a class="anchor hidden-xs" href="#Basic-Script" title="Basic-Script"><span class="octicon octicon-link"></span></a>Basic Script</h3><pre><code>monkeyrunner -plugin&lt;plugin_jar&gt; &lt;program_filename&gt; &lt;program_options&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">參數</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;plugin_jar&gt;</td>
+<td style="text-align:center">java插件</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;program_filename&gt;</td>
+<td style="text-align:center">python腳本名稱</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;program_options&gt;</td>
+<td style="text-align:center">設定program_file旗標或是參數</td>
+</tr>
+</tbody>
+</table><p>下monkeyrunner進入編譯器後，根據<a href="https://developer.android.com/studio/test/monkeyrunner/" target="_blank">Android官方說明</a>以下為範例程式碼，主要功能為等待裝置連接後安裝APP，跑指定的Activity並點按指定按鍵最後儲存截圖。</p><pre><code>from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
 device = MonkeyRunner.waitForConnection()
 device.installPackage('myproject/bin/MyApplication.apk')
 package = 'com.example.android.myapplication'
@@ -386,7 +408,7 @@ device.startActivity(component=runComponent)
 device.press('KEYCODE_MENU', MonkeyDevice.DOWN_AND_UP)
 result = device.takeSnapshot()
 result.writeToFile('myproject/shot1.png','png')
-</code></pre><p>monkeyruner將python當作編譯器因此寫法與python一樣，可以控制迴圈、判斷式重複測試將BUG抓出，如以下程式碼，等待裝置連接之後重複執行點按的指令並在其中delay。</p><pre><code>from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
+</code></pre><p>monkeyrunner將python當作編譯器因此寫法與python一樣，可以控制迴圈、判斷式重複測試將BUG抓出，如以下程式碼，等待裝置連接之後重複執行點按的指令並在其中delay。</p><pre><code>from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
 device = MonkeyRunner.waitForConnection()
 for i in range(1,10):
     device.touch(1005,545,MonkeyDevice.DOWN_AND_UP)
@@ -472,12 +494,12 @@ for i in range(1,10):
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-                <div class="toc"><ul class="nav"><li><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command0" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List0" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li class=""><a href="#Basic-Script" title="Basic Script">Basic Script</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+                <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li class=""><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li class=""><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li class=""><a href="#Basic-Command" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List0" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li class=""><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li><a href="#Basic-Script" title="Basic Script">Basic Script</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
-        <div class="toc"><ul class="nav"><li><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li><a href="#Basic-Command0" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List0" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li class=""><a href="#Basic-Script" title="Basic Script">Basic Script</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+        <div class="toc"><ul class="nav"><li class=""><a href="#Android-Test-Tool" title="Android Test Tool">Android Test Tool</a></li><li class=""><a href="#Monkey-amp-Monkey-Script" title="Monkey &amp; Monkey Script">Monkey &amp; Monkey Script</a><ul class="nav"><li class=""><a href="#Monkey" title="Monkey">Monkey</a><ul class="nav"><li class=""><a href="#Basic-Command" title="Basic Command">Basic Command</a></li><li><a href="#Command-Parameter" title="Command Parameter">Command Parameter</a></li><li><a href="#Random-Command-Parameter" title="Random Command Parameter">Random Command Parameter</a></li></ul></li><li><a href="#Monkey-ScriptMS" title="Monkey Script(MS)">Monkey Script(MS)</a><ul class="nav"><li><a href="#Basic-Command1" title="Basic Command">Basic Command</a></li><li><a href="#Command-List0" title="Command List">Command List</a></li></ul></li></ul></li><li class=""><a href="#Monkey-Runner" title="Monkey Runner">Monkey Runner</a><ul class="nav"><li class=""><a href="#Environment-Setup" title="Environment Setup">Environment Setup</a><ul class="nav"><li><a href="#Python" title="Python">Python</a></li><li><a href="#Java-Developer-KitJDK" title="Java Developer Kit(JDK)">Java Developer Kit(JDK)</a></li><li class=""><a href="#Android-Developer-ToolADT" title="Android Developer Tool(ADT)">Android Developer Tool(ADT)</a></li><li><a href="#Basic-Script" title="Basic Script">Basic Script</a></li><li><a href="#Command-List" title="Command List">Command List</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
