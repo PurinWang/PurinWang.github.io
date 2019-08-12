@@ -1,0 +1,601 @@
+body {
+  background-image: url("src/BG.png");
+  /* background-image: url("../v2/切版素材/美男夏日祭典2019-04連動活動.jpg"); */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(10, 47, 75);
+  height: 100vh;
+}
+
+#logo {
+  width: 26vw;
+  display: inline-block;
+  position: absolute;
+  left: 4vw;
+  top: 4vw;
+}
+
+#pills-tab {
+  /* margin-top: -20px; */
+  /* margin-bottom: -20%; */
+}
+
+#pills-tab  .nav-link {
+  /* height: 190px; */
+  /* width: 118px;
+  height: 118px; */
+  height:23vw;
+  margin-top: -25px;
+}
+
+#pills-tab > .nav-item:nth-child(4) {
+  /* height:23vw; */
+}
+
+.container-fluid{
+  margin-top: -15vw;
+}
+
+.container-fluid > .row:first-child{
+  height: 40vw;
+}
+
+.container-fluid > .row:nth-child(2){
+  height: 130vw;
+}
+
+.nav-link, .nav-link:hover, .nav-link.active {
+  height: 80%;
+  background-position: bottom !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+.nav-item {
+  padding: 0.3vw;
+}
+.nav-item:nth-child(1) {
+  margin-top: 15vw;
+}
+.nav-item:nth-child(2) {
+  margin-top: 5vw;
+  margin-left: -2vw;
+}
+.nav-item:nth-child(3) {
+  margin-top: 1vw;
+}
+.nav-item:nth-child(4) {
+  margin-top: 5vw;
+  margin-right: -2vw;
+}
+.nav-item:nth-child(5) {
+  margin-top: 15vw;
+}
+
+#pills-drhl-tab {
+  background: url("src/登入好禮.png");
+}
+#pills-zddr-tab {
+  background: url("src/指定登入.png");
+}
+#pills-hdlb-tab {
+  background: url("src/活動禮包.png");
+}
+#pills-ldhd-tab {
+  background: url("src/連動活動.png");
+}
+#pills-fzhd-tab {
+  background: url("src/粉專活動.png");
+}
+
+#pills-drhl-tab:hover {
+  background: url("src/登入好禮 ON.png");
+}
+#pills-zddr-tab:hover {
+  background: url("src/指定登入 ON.png");
+}
+#pills-hdlb-tab:hover {
+  background: url("src/活動禮包 ON.png");
+}
+#pills-ldhd-tab:hover {
+  background: url("src/連動活動 ON.png");
+}
+#pills-fzhd-tab:hover {
+  background: url("src/粉專活動 ON.png");
+}
+
+div[role="tabpanel"] {
+  height: 550px;
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+/* 登入好禮 */
+#pills-drhl {
+  background-image: url("src/活動期間登入.png");
+}
+#pills-drhl img {
+  position: absolute;
+  right: 25%;
+  width: 10%;
+}
+#pills-drhl img:nth-child(1) {
+  top: 25.5vw;
+}
+#pills-drhl img:nth-child(2) {
+  top: 33.5vw;
+}
+#pills-drhl img:nth-child(3) {
+  top: 42vw;
+}
+/* 指定登入 */
+#pills-zddr {
+  background-image: url("src/指定日期登入.png");
+}
+#pills-zddr div:first-child {
+  height: 75%;
+  margin:auto;
+}
+#pills-zddr div:first-child img {
+  width: 100%;
+}
+/* 活動禮包 */
+#pills-hdlb {
+  background-image: url("src/購買任意禮包.png");
+}
+/* 連動活動 */
+#pills-ldhd {
+  background-image: url("src/Line綁定連動活動.png");
+}
+button[data-target="#modalGiftSample1"],
+button[data-target="#modalGiftSample2"] {
+  position: absolute;
+}
+button[data-target="#modalGiftSample1"] {
+  top: 11vh;
+  right: 15vw;
+}
+button[data-target="#modalGiftSample2"] {
+  top: 43.5vh;
+  right: 11vw;
+}
+#modalGiftSample1 .modal-dialog,
+#modalGiftSample2 .modal-dialog {
+  background-image: url("src/sample.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#modalGiftSample1 .modal-footer,
+#modalGiftSample2 .modal-footer {
+  height: 93vw;
+}
+
+#giftStatic1, #giftStatic2 {
+  position: absolute;
+  width: 12vw;
+}
+#giftStatic1 div {
+  padding: 0.1vh;
+}
+#giftStatic2 div {
+  padding: 0.2vh;
+}
+#giftStatic1 {
+  top: 17vh;
+  right: 32.5vw;
+}
+#giftStatic2 {
+  top: 49.5vh;
+  right: 27.5vw;
+}
+[id^="btnModalGift"] {
+  width: 30%;
+  margin: auto;
+  position: absolute;
+  left: 35%;
+}
+[id^="btnModalGift"] img, [id^="btnModalGift"] button {
+  width: 100%;
+}
+[id^="btnModalGift"] button {
+  padding: inherit;
+  margin-top: -5%;
+}
+#btnModalGift1 {
+  top: 27%;
+}
+#btnModalGift2 {
+  top: 58%;
+}
+#modalGift1 .modal-dialog, #modalGift2 .modal-dialog {
+  background-image: url("src/sample.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#modalGift1 .modal-footer, #modalGift2 .modal-footer {
+  height: 93vw;
+}
+button.btnClose {
+  background-image: url("src/關閉視窗.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+/* 粉專活動 */
+#pills-fzhd {
+  background-image: url("src/粉絲團分享活動.png");
+}
+
+/* for iPhone 5/SE */
+@media (min-width: 320px)  {
+  /* 登入好禮 */
+  #pills-drhl img:nth-child(1) {
+    top: 14%;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 18.5%;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 23%;
+  }
+  /* 指定登入 */
+  #pills-zddr div:first-child {
+    height: 53%;
+  }
+  #pills-zddr div:first-child img {
+    width: 33%;
+  }
+  /* 連動活動 */
+  button[data-target="#modalGiftSample1"] {
+    top: 10vh;
+    right: 14vw;
+  }
+  #giftStatic1, #giftStatic2 {
+    font-size: 12px;
+  }
+  #giftStatic1 {
+    top: 16vh;
+    right: 33.5vw;
+  }
+  #giftStatic2 {
+    top: 46.5vh;
+    right: 29vw;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 40vh;
+    right: 10vw;
+  }
+}
+/* for Galaxy S5 */
+@media (min-width: 360px)  {
+  #pills-drhl img:nth-child(1) {
+    top: 16.3%;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 21.5%;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 26.5%;
+  }
+  #pills-zddr div:first-child {
+    height: 62%;
+    width: 100%;
+  }
+  #giftStatic1, #giftStatic2 {
+      font-size: 14px;
+  }
+  #giftStatic1 {
+    top: 19%;
+    right: 33%;
+  }
+  #giftStatic2 {
+    top: 54.7%;
+    right: 28.4vw;
+  }
+  #btnModalGift1 {
+    top: 31%;
+  }
+  #btnModalGift2 {
+    top: 68%;
+  }
+  button[data-target="#modalGiftSample1"] {
+    top: 12%;
+    right: 14%;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 48%;
+    right: 11%;
+  }
+}
+
+@media (min-width: 480px)  {
+  #modalGift1 .modal-footer, #modalGift2 .modal-footer {
+    height: 98vw;
+  }
+  #modalGift1 button.btnClose, #modalGift2 button.btnClose {
+    width: 125px;
+    height: 25px;
+  }
+  #pills-zddr div:first-child img {
+    width: 33%;
+  }
+  #pills-zddr div:first-child {
+    height: 53%;
+  }
+}
+/* for iPhone 6/7/8 */
+@media (min-width: 375px)  {
+  #pills-zddr div:first-child {
+    height: 66%;
+  }
+  /* 連動活動 */
+  #giftStatic1, #giftStatic2 {
+    font-size: 14px;
+  }
+  #giftStatic1 {
+    top: 20%;
+    right: 33%;
+  }
+  #btnModalGift1 {
+    top: 33%;
+  }
+  #giftStatic2 {
+    top: 57.8%;
+    right: 28%;
+  }
+  #btnModalGift2 {
+    top: 71%;
+  }
+  #pills-drhl img:nth-child(1) {
+    top: 17.3%;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 22.5%;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 28%;
+  }
+}
+/* for Pixel 2 */
+@media (min-width: 411px)  {
+  #pills-zddr div:first-child {
+    height: 73%;
+  }
+  button[data-target="#modalGiftSample1"] {
+    top: 14%;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 57%;
+  }
+  #giftStatic1 {
+    top: 22%;
+    right: 32.5%;
+  }
+  #giftStatic1, #giftStatic2 {
+    font-size: 16px;
+  }
+  #giftStatic2 {
+    top: 64.5%;
+  }
+  #btnModalGift1 {
+    top: 37%;
+  }
+  #btnModalGift2 {
+    top: 80%;
+  }
+  #pills-drhl img:nth-child(1) {
+    top: 19%;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 25%;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 31%;
+  }
+}
+
+/* for iPhone 6/7/8 Plus */
+@media (min-width: 414px)  {
+  #pills-zddr div:first-child {
+    height: 74%;
+  }
+  /* 連動活動 */
+  button[data-target="#modalGiftSample1"] {
+    top: 11vh;
+  }
+  #giftStatic1, #giftStatic2 {
+    font-size: 17px;
+  }
+  #giftStatic1 {
+    top: 22.5%;
+    right: 32.5%;
+  }
+  #btnModalGift1 {
+    top: 38%;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 44vh;
+  }
+  #giftStatic2 {
+    top: 65.3%;
+  }
+  #btnModalGift2 {
+    top: 81%;
+  }
+}
+/* for iPhone X */
+@media (min-width: 375px && min-height: 812px)  {
+  #pills-drhl img:nth-child(1) {
+    top: 17%;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 22.5%;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 28%;
+  }
+  #pills-zddr div:first-child {
+    height: 65%;
+  }
+  /* 連動活動 */
+  button[data-target="#modalGiftSample1"] {
+    top: 8.5vh;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 35vh;
+  }
+}
+/* for Nexus 7 */
+@media (min-width: 600px)  {
+  #pills-drhl img:nth-child(1) {
+    top: 15.5%;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 20.5%;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 25.3%;
+  }
+  #pills-zddr div:first-child {
+    height: 115%;
+  }
+  button[data-target="#modalGiftSample1"] {
+    top: 13.5%;
+    right: 20%;
+  }
+  #giftStatic1 {
+    top: 20%;
+    right: 34%;
+  }
+  #giftStatic1, #giftStatic2 {
+      font-size: 22px;
+  }
+  [id^="btnModalGift"] button {
+    margin-top: inherit;
+  }
+  #btnModalGift1 {
+    top: 34%;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 53%;
+    right: 17%;
+  }
+  #giftStatic2 {
+    top: 58.5%;
+    right: 30%;
+  }
+  #btnModalGift2 {
+    top: 74%;
+  }
+}
+/* for iPad */
+@media (min-width: 768px)  {
+  div[role="tabpanel"] {
+    height: 85vh;
+  }
+  /* 登入好禮 */
+  #pills-drhl img:nth-child(1) {
+    top: 23.5vw;
+  }
+  #pills-drhl img:nth-child(2) {
+    top: 31.5vw;
+  }
+  #pills-drhl img:nth-child(3) {
+    top: 40vw;
+  }
+  /* 指定登入 */
+  #pills-zddr {
+    height: 53vh;
+  }
+  #pills-zddr div:first-child {
+    height: 130%;
+    width: 80%;
+  }
+  #pills-zddr div:first-child img {
+    width: 33%;
+  }
+  #pills-zddr div:first-child {
+    height: 95%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #pills-zddr div:first-child {
+    height: 130%;
+    width: 80%;
+  }
+  /* 連動活動 */
+  #pills-ldhd {
+    height: 73vh;
+  }
+  #modalGift1 .modal-footer, #modalGift2 .modal-footer {
+    height: 62vw;
+  }
+  #modalGift1 button.btnClose, #modalGift2 button.btnClose {
+    width: 200px;
+    height: 40px;
+  }
+  button[data-target="#modalGiftSample1"] {
+    top: 15%;
+    width: 8%;
+    right: 18%;
+  }
+  #giftStatic1, #giftStatic2 {
+    font-size: 30px;
+  }
+  [id^="btnModalGift"] {
+    width: 35%;
+    left: 33%;
+  }
+  [id^="btnModalGift"] button {
+    margin-top: 1%;
+  }
+  #giftStatic1 {
+    top: 20.5%;
+    right: 33%;
+  }
+  #btnModalGift1 {
+    top: 36%;
+  }
+  button[data-target="#modalGiftSample2"] {
+    top: 56.5%;
+    width: 8%;
+  }
+  #giftStatic2 {
+    top: 62%;
+    right: 28.5%;
+  }
+  #btnModalGift2 {
+    top: 80%;
+  }
+}
+/* for iPad Pro */
+@media (min-width: 1024px)  {
+  #modalGift1 .modal-footer, #modalGift2 .modal-footer {
+    height: 72vw;
+  }
+  #modalGift1 button.btnClose, #modalGift2 button.btnClose {
+    width: 250px;
+    height: 50px;
+  }
+  #pills-zddr div:first-child img {
+    width: 33%;
+  }
+  #pills-zddr div:first-child {
+    height: 130%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #giftStatic1, #giftStatic2 {
+    font-size: 40px;
+  }
+}
